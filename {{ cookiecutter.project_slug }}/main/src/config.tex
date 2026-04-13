@@ -1,0 +1,66 @@
+% Basic configuration for {{ cookiecutter.project_name }}
+
+\usepackage[
+    paperwidth=210mm,
+    paperheight=297mm,
+    margin=25mm,
+]{geometry}
+\usepackage[super,sort&compress]{natbib}
+\usepackage[super]{nth}
+\usepackage[prefix]{glossaries-extra}
+\usepackage{graphicx}
+\usepackage{cleveref}
+\usepackage{xspace}
+\usepackage{siunitx}
+
+% Example abbreviation template (edit/delete as needed)
+\newabbreviation{example}{EX}{Example term}
+
+% Figure and supplementary numbering conventions
+
+\newcounter{supsection}[section]
+\renewcommand{\thesupsection}{S\arabic{supsection}}
+
+\newcounter{subfigure}[figure]
+\renewcommand{\thesubfigure}{\thefigure\alph{subfigure}}
+
+\newcounter{supfigure}[figure]
+\renewcommand{\thesupfigure}{S\arabic{supfigure}}
+
+\newcounter{supsubfigure}[supfigure]
+\renewcommand{\thesupsubfigure}{\thesupfigure\alph{supsubfigure}}
+
+\newcommand{\supseclabel}[1]{%
+  \refstepcounter{supsection}%
+  \label{#1}%
+}
+\newcommand{\subfiglabel}[1]{%
+  \refstepcounter{subfigure}%
+  \label{#1}%
+}
+\newcommand{\supfiglabel}[1]{%
+  \refstepcounter{supfigure}%
+  \label{#1}%
+}
+\newcommand{\supsubfiglabel}[1]{%
+  \refstepcounter{supsubfigure}%
+  \label{#1}%
+}
+\newcommand{\captionlabel}[1]{%
+  \textbf{#1}%
+}
+
+\crefname{figure}{Fig.}{Figs.}
+\Crefname{figure}{Fig.}{Figs.}
+\crefname{section}{Sec.}{Secs.}
+\Crefname{section}{Sec.}{Secs.}
+\crefname{equation}{Eq.}{Eqs.}
+\Crefname{equation}{Eq.}{Eqs.}
+\crefname{supsection}{Supplementary Sec.}{Supplementary Secs.}
+\Crefname{supsection}{Supplementary Sec.}{Supplementary Secs.}
+\crefname{subfigure}{Fig.}{Figs.}
+\Crefname{subfigure}{Fig.}{Figs.}
+\crefname{supfigure}{Supplementary Fig.}{Supplementary Figs.}
+\Crefname{supfigure}{Supplementary Fig.}{Supplementary Figs.}
+\crefname{supsubfigure}{Supplementary Fig.}{Supplementary Figs.}
+\Crefname{supsubfigure}{Supplementary Fig.}{Supplementary Figs.}
