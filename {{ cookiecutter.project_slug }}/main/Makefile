@@ -1,4 +1,4 @@
-.PHONY: main clean
+.PHONY: main clean FORCE
 
 SRC_DIR := src
 OUTDIR := ..
@@ -8,7 +8,7 @@ PDFLATEX := lualatex -interaction nonstopmode
 
 main: main.pdf
 
-main.pdf:
+main.pdf: FORCE
 	cd "$(SRC_DIR)" && \
 	$(LATEXMK) -lualatex="$(PDFLATEX)" -output-directory="$(OUTDIR)" -aux-directory="$(AUXDIR)" -pdf main.tex
 
